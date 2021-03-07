@@ -17,13 +17,12 @@
 
 public class Template.Indicator : Wingpanel.Indicator {
 
-    private Wingpanel.Widgets.OverlayIcon display_widget;
+    private Gtk.Image display_widget;
     private Gtk.Grid popover_widget;
 
     public Indicator () {
         Object (
-            code_name: "wingpanel-indicator-template",
-            display_name: "Template indicator"
+            code_name: "wingpanel-indicator-template"
         );
 
         visible = true;
@@ -31,7 +30,7 @@ public class Template.Indicator : Wingpanel.Indicator {
 
     public override Gtk.Widget get_display_widget () {
         if (display_widget == null) {
-            display_widget = new Wingpanel.Widgets.OverlayIcon ("applications-other-symbolic");
+            display_widget = new Gtk.Image.from_icon_name ("applications-other-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
         }
 
         return display_widget;
